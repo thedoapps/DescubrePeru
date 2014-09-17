@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Colores Paleta -->
+    <color name="paleta_amarillo">#F2D43F</color>
+    <color name="paleta_verde">#61C155</color>
+    <color name="paleta_azul">#048091</color>
+    <color name="progress_bg">#727072</color>
+
+    <!-- colores flat flat_ui -->
+
+    <color name="verde_oscuro_turquoise">#1ABC9C</color>
+    <color name="verde_oscuro_green_sea">#16A085</color>
+    <color name="verde_claro_emerald">#2ECC71</color>
+    <color name="verde_claro_nephritis">#27AE60</color>
+    <color name="azul_claro_peter_river">#3498DB</color>
+    <color name="azul_claro_belize_hole">#2980B9</color>
+    <color name="morado_amethyst">#9B59B6</color>
+    <color name="morado_wisteria">#8E44AD</color>
+    <color name="azul_oscuro_wet_asphalt">#34495E</color>
+    <color name="azul_oscuro_midnight_blue">#2C3E50</color>
+    <color name="amarillo_sun_flower">#F1C40F</color>
+    <color name="amarillo_orange">#F39C12</color>
+    <color name="naranja_carrot">#E67E22</color>
+    <color name="naranja_pumpkin">#D35400</color>
+    <color name="rojo_alizarin">#E74C3C</color>
+    <color name="rojo_pomegranate">#C0392B</color>
+    <color name="plomo_claro_clouds">#ECF0F1</color>
+    <color name="plomo_claro_silver">#BDC3C7</color>
+    <color name="plomo_oscuro_concrete">#95A5A6</color>
+    <color name="plomo_oscuro_asbestos">#7F8C8D</color>
+
+    <color name="flatui_concrete">#34495E</color>
+
+
+    <!-- Colores -->
+
+    <color name="color_blanco">#FFFFFF</color>
+    <color name="color_negro">#000000</color>
+    <color name="counter_text_bg">#626262</color>
+
+    <!-- Colores Facebook - Twitter Flat Buttons -->
+
+    <color name="color_flat_facebook_a">#3a5994</color>
+    <color name="color_flat_facebook_b">#153473</color>
+    <color name="color_flat_twitter_a">#2ac6f5</color>
+    <color name="color_flat_twitter_b">#04a0cf</color>
+
+    <!-- Card Colors -->
+    <color name="card_pressed">#ebebeb</color>
+    <color name="card_pressed_header">#d6d6d6</color>
+    <color name="header_button_default">#494949</color>
+    <color name="card_gray">#e5e5e5</color>
+
+</resources>
