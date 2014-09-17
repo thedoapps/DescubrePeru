@@ -5,4 +5,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string name="app_id">BKNI1bsBMI0jWhzCitMgsW9EZEaUC8n9N8K4lTUt</string>
+    <string name="client_key">MJYQch3xqxxOZqrioO93Jgr2wAtQZUDsXEBr30Fb</string>
 </resources>
