@@ -1,64 +1,82 @@
 package me.doapps.descubreperu;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
+import android.app.ActionBar;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBarActivity;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
+import android.view.Window;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingActivity;
+
+import me.doapps.fragments.Fragment_Menu;
+import me.doapps.fragments.Fragment_Tutorial;
 
 
 public class DescubrePeru extends ActionBarActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_descubre_peru);
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
-    }
+    public SlidingMenu sm_menu;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        initActionBar();
+        setContentView(R.layout.descubre_peru);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, Fragment_Tutorial.newInstance()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame, Fragment_Menu.newInstance()).commit();
+
+        sm_menu = new SlidingMenu(this);
+        sm_menu.setMode(SlidingMenu.LEFT);
+        sm_menu.setMenu(R.layout.menu_frame);
+        sm_menu.setShadowWidthRes(R.dimen.navigation_drawer_width);
+        sm_menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+        sm_menu.setFadeDegree(0.35f);
+        sm_menu.attachToActivity(this,SlidingMenu.SLIDING_WINDOW);
+        sm_menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.descubre_peru, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                sm_menu.toggle(true);
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if(sm_menu.isMenuShowing()){
+                sm_menu.toggle(true);
+                return false;
+            }
         }
+        return super.onKeyDown(keyCode, event);
+    }
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_descubre_peru, container, false);
-            return rootView;
-        }
+    private void initActionBar(){
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#4D000000")));
+        actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#4D000000")));
+
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        getSupportActionBar().setIcon(null);
+        getSupportActionBar().setTitle("");
     }
 }

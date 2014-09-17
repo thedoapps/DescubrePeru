@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rojo_crear_ruta">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingBottom="30dp"
+        android:layout_marginLeft="40dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:src="@drawable/user"
+            android:id="@+id/menu_user_image"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Nombre"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_gravity="left"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:id="@+id/menu_nombre_usuario" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/option_rutas_turisticas"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:adjustViewBounds="true"
+            android:scaleType="matrix"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Turisticas"
+            android:textSize="22sp"
+            android:layout_gravity="center"
+            android:id="@+id/txt_option_rutas_turisticas"
+            android:gravity="left"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/option_rutas_gastronomicas"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView3"
+            android:adjustViewBounds="true"
+            android:scaleType="matrix"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gastronomicas"
+            android:textSize="22sp"
+            android:id="@+id/txt_option_rutas_gastronomicas"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/option_rutas_nocturnas"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView6"
+            android:adjustViewBounds="true"
+            android:scaleType="matrix"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nocturnas"
+            android:textSize="22sp"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:id="@+id/txt_option_rutas_nocturnas"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            />
+    </LinearLayout>
+</LinearLayout>

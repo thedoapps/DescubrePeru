@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 20
+    compileSdkVersion 19
     buildToolsVersion "20.0.0"
 
     defaultConfig {
@@ -27,6 +27,7 @@ dependencies {
     compile project(':sliding_menu')
     compile project(':FacebookSDK')
     compile project(':ParseLoginUI')
+    compile project(':library')
     compile 'com.google.android.gms:play-services:5.2.08'
 }
 
