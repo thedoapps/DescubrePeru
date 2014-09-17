@@ -24,4 +24,4 @@
     <item android:state_focused="true"                                                             android:drawable="@drawable/com_facebook_picker_list_focused" />
     <item                                                                                          android:drawable="@android:color/transparent" />
 </selector>
-<!-- From: file:/Users/Gantz/Desktop/Hackaton_App_Peru/DescubrePeru/FacebookSDK/res/drawable/com_facebook_picker_item_background.xml -->
+<!-- From: file:/D:/CAPACITACION_2014/ANDROID/DescubrePeru_Oficial/DescubrePeru/FacebookSDK/res/drawable/com_facebook_picker_item_background.xml -->

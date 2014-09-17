@@ -5,6 +5,25 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Login -->
+    <string name="login_fb">Entrar con Facebook</string>
+    <string name="login_tw">Entrar con Twitter</string>
+    <!-- Select Type -->
+    <string name="ruta">Ruta</string>
+    <string name="turismo">Turistica</string>
+    <string name="gastronomia">Gastronomica</string>
+    <string name="nocturno">Nocturna</string>
+    <!-- Detail Place -->
+    <string name="name_place">Nombre del lugar</string>
+    <string name="description_place">Descripcion del lugar</string>
+    <string name="show_comments">Ver Comentarios</string>
+    <!-- Item route List-->
+    <string name="route_name">Ruta de Cristian</string>
+    <string name="route_likes">8 Likes</string>
+    <!-- Fragment Region -->
+    <string name="route_create">Crear Ruta</string>
+
     <string name="app_id">BKNI1bsBMI0jWhzCitMgsW9EZEaUC8n9N8K4lTUt</string>
     <string name="client_key">MJYQch3xqxxOZqrioO93Jgr2wAtQZUDsXEBr30Fb</string>
+    <string name="google_maps_key">AIzaSyD4sKf-fUsUHXI2N8bxHHShbIOwlzC_jYM</string>
 </resources>

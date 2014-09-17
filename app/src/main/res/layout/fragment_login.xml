@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/portada_ruta_gastronomica"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal|bottom">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:background="@drawable/holo_flat_button_facebook"
+            android:layout_margin="10dp"
+            android:text="@string/login_fb"
+            android:layout_gravity="center" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:textColor="@color/white"
+            android:background="@drawable/holo_flat_button_twitter"
+            android:text="@string/login_tw"
+            android:layout_gravity="center_horizontal|bottom" />
+
+        </LinearLayout>
+
+    <ImageView
+        android:layout_width="879dp"
+        android:layout_height="146dp"
+        android:padding="30dp"
+        android:src="@drawable/user"
+        android:layout_gravity="center_horizontal|top" />
+
+
+</FrameLayout>
