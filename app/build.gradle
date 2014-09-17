@@ -27,4 +27,5 @@ dependencies {
     compile project(':sliding_menu')
     compile project(':FacebookSDK')
     compile project(':ParseLoginUI')
+    compile 'com.google.android.gms:play-services:5.2.08'
 }
