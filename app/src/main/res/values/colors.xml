@@ -2,4 +2,5 @@
 <resources>
     <color name="rojo_crear_ruta">#E74C3C</color>
     <color name="rojo_crear_boton">#E74C3C</color>
+    <color name="rojo_crear_buscar">#E74C3C</color>
 </resources>
