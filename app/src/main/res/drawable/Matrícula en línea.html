@@ -1,0 +1,1570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>
+	Matrícula en línea
+</title>    
+ 		<style>
+            .marco
+            {
+	            BORDER-TOP: black thin solid;
+                BORDER-LEFT: black thin solid;
+                BORDER-BOTTOM: black thin solid;
+                BORDER-RIGHT: black thin solid;
+            }
+            .marco_left
+            {
+	            BORDER-LEFT: black thin solid;
+	            BORDER-TOP: black thin solid;    
+                BORDER-BOTTOM: black thin solid;
+            }
+            .marco_right
+            {
+	            BORDER-TOP: black thin solid;    
+                BORDER-BOTTOM: black thin solid;
+                BORDER-RIGHT: black thin solid;
+            }
+            .marco_sin
+            {
+	            BORDER-TOP: black thin solid;    
+                BORDER-BOTTOM: black thin solid;    
+            }
+            </style>
+		<script language="javascript">
+function Imprimir() {
+	botonPrint1.style.visibility = 'hidden';
+	botonPrint2.style.visibility = 'hidden';
+	window.print();
+}
+		</script>
+</head>
+<body topmargin="0" leftmargin="15" rightmargin="15">
+    <form name="form1" method="post" action="matcib07.aspx" id="form1">
+<div>
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="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" type="hidden">
+</div>
+
+    <div>
+      
+      <br>
+		<table border="0" cellpadding="0" cellspacing="0" width="630">
+
+			<tbody><tr height="50" valign="middle">
+				<td align="center">
+					<font face="ARIAL" size="5"><b>CONSOLIDADO DE MATRÍCULA 
+                        <br>
+                        CIBERTEC</b></font></td>
+			</tr>
+			<tr align="right" height="50">
+				<td>
+					<table style="visibility: hidden;" bordercolordark="#FFFFFF" bordercolorlight="#000000" id="botonPrint1" border="1" bordercolor="#000000" cellpadding="0" cellspacing="0">
+						<tbody><tr>
+							<td style="CURSOR:pointer; height: 25px;" onclick="Imprimir();" bgcolor="navy" align="center" width="100">
+								<font color="white" face="arial" size="2"><b>Imprimir</b></font></td>
+						</tr>
+					</tbody></table>
+				</td>
+			</tr>
+			<tr valign="top">
+				<td align="center">
+					<table border="1" bordercolor="BLACK" cellpadding="0" cellspacing="0" width="100%">
+						<tbody><tr>
+							<td align="CENTER">
+								<font face="ARIAL" size="1">CÓDIGO</font>
+							</td>
+							<td align="CENTER">
+								<font face="ARIAL" size="1">APELLIDOS Y NOMBRES</font>
+							</td>
+							<td align="CENTER">
+								<font face="ARIAL" size="1">CARRERA</font>
+							</td>
+							<td align="CENTER">
+								<font face="ARIAL" size="1">CICLO</font>
+							</td>
+						</tr>
+						<tr>
+							<td align="CENTER">
+								<font face="ARIAL" size="1">
+								<span id="lblCodigo">201013249</span>
+								</font>
+							</td>
+							<td align="CENTER">
+								<font face="ARIAL" size="1">
+                                    <span id="lblNombres">Palomino Rivera, Cristian Alex</span>
+								</font>
+							</td>
+							<td align="CENTER">
+								<font face="ARIAL" size="1">
+                                    <span id="lblCarrera">COMPUTACION E INFORMATICA SN</span>
+								</font>
+							</td>
+							<td align="CENTER">
+								<font face="ARIAL" size="1">
+									<span id="lblCiclo">201422</span>
+								</font>
+							</td>
+						</tr>
+					</tbody></table>
+				</td>
+			</tr>
+			<tr height="5" valign="middle">
+				<td align="center">
+					<font face="ARIAL" size="5"><b>&nbsp;</b></font>
+				</td>
+			</tr>
+			<tr valign="top">
+				<td align="center">
+					<table border="0" bordercolor="BLACK" cellpadding="0" cellspacing="0" width="100%">
+						<tbody><tr valign="top">
+							<td align="CENTER" width="55%">
+							
+								<table border="1" bordercolor="BLACK" cellpadding="0" cellspacing="0" width="100%">
+									<tbody><tr>
+										<td colspan="6" align="CENTER">
+											<font face="ARIAL" size="2">&nbsp;<b>ASIGNATURAS</b></font>
+										</td>
+									</tr>
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;CÓDIGO</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;CRÉD.</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;NIVEL</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;VEZ</font>
+										</td>
+										<td c="" align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;ASIGNATURA</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;SECCIÓN</font>
+										</td>
+									</tr>
+								
+							
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl01_lblCodCurso">0258</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl01_lblCreditos">6</span>
+											</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl01_lblNivel">04</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl01_lblVez">4</span></font>
+										</td>
+										<td align="LEFT">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl01_lblCurso">ANÁLISIS Y DISEÑO DE SISTEMAS II</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl01_lblSeccGrupo">T4BN - 01</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl02_lblCodCurso">0561</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl02_lblCreditos">5</span>
+											</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl02_lblNivel">06</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl02_lblVez">1</span></font>
+										</td>
+										<td align="LEFT">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl02_lblCurso">INTELIGENCIA DE NEGOCIOS</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl02_lblSeccGrupo">T6AN - 01</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl03_lblCodCurso">0720</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl03_lblCreditos">2</span>
+											</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl03_lblNivel">05</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl03_lblVez">1</span></font>
+										</td>
+										<td align="LEFT">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl03_lblCurso">ORGANIZACIÓN Y CONSTITUCIÓN DE EMPRESAS</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl03_lblSeccGrupo">T5CN - 11</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl04_lblCodCurso">0772</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl04_lblCreditos">4</span>
+											</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl04_lblNivel">05</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl04_lblVez">1</span></font>
+										</td>
+										<td align="LEFT">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl04_lblCurso">FUNDAMENTOS DE CALIDAD DE SOFTWARE</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl04_lblSeccGrupo">T5BN - 00</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl05_lblCodCurso">0779</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl05_lblCreditos">4</span>
+											</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl05_lblNivel">05</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl05_lblVez">2</span></font>
+										</td>
+										<td align="LEFT">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl05_lblCurso">PROYECTO DE INVESTIGACIÓN TECNOLÓGICA (CI)</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl05_lblSeccGrupo">T5AN - 01</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl06_lblCodCurso">1364</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl06_lblCreditos">4</span>
+											</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl06_lblNivel">06</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl06_lblVez">1</span></font>
+										</td>
+										<td align="LEFT">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl06_lblCurso">DESARROLLO DE APLICACIONES DISTRIBUIDAS</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl06_lblSeccGrupo">T6BN - 01</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl07_lblCodCurso">1367</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl07_lblCreditos">2</span>
+											</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl07_lblNivel">06</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl07_lblVez">1</span></font>
+										</td>
+										<td align="LEFT">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl07_lblCurso">DESARROLLO PROFESIONAL</span></font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptAsiganturas_ctl07_lblSeccGrupo">T6AN - 00</span>
+											</font>
+										</td>
+									</tr>
+									
+								</tbody></table>
+								
+							</td>
+							
+							<td align="CENTER" width="5">
+								<font face="ARIAL" size="1">&nbsp;</font>
+							</td>
+							<td align="CENTER">
+							
+								<table border="1" bordercolor="BLACK" cellpadding="0" cellspacing="0" width="100%">
+									<tbody><tr valign="top">
+										<td colspan="8" align="CENTER">
+											<font face="ARIAL" size="2">&nbsp;<b>HORARIO</b></font>
+										</td>
+									</tr>
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;HORA</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;LUN.</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;MAR</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;MIE.</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;JUE.</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;VIE.</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;SAB.</font>
+										</td>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;DOM.</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl01_lblHora">07:40</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl01_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl01_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl01_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl01_lblJueves">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl01_lblViernes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl01_lblSabado">&nbsp;</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl01_lblDomingo">1367</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl02_lblHora">08:30</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl02_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl02_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl02_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl02_lblJueves">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl02_lblViernes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl02_lblSabado">&nbsp;</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl02_lblDomingo">1367</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl03_lblHora">09:20</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl03_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl03_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl03_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl03_lblJueves">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl03_lblViernes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl03_lblSabado">&nbsp;</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl03_lblDomingo">1367</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl04_lblHora">10:10</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl04_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl04_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl04_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl04_lblJueves">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl04_lblViernes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl04_lblSabado">&nbsp;</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl04_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl05_lblHora">11:00</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl05_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl05_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl05_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl05_lblJueves">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl05_lblViernes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl05_lblSabado">&nbsp;</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl05_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl06_lblHora">11:50</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl06_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl06_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl06_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl06_lblJueves">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl06_lblViernes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl06_lblSabado">&nbsp;</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl06_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl07_lblHora">12:40</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl07_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl07_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl07_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl07_lblJueves">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl07_lblViernes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl07_lblSabado">&nbsp;</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl07_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl08_lblHora">13:30</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl08_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl08_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl08_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl08_lblJueves">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl08_lblViernes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl08_lblSabado">&nbsp;</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl08_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl09_lblHora">14:20</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl09_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl09_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl09_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl09_lblJueves">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl09_lblViernes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl09_lblSabado">&nbsp;</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl09_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl10_lblHora">15:10</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl10_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl10_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl10_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl10_lblJueves">0258</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl10_lblViernes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl10_lblSabado">&nbsp;</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl10_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl11_lblHora">16:00</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl11_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl11_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl11_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl11_lblJueves">0258</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl11_lblViernes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl11_lblSabado">0561</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl11_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl12_lblHora">16:50</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl12_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl12_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl12_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl12_lblJueves">0258</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl12_lblViernes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl12_lblSabado">0561</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl12_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl13_lblHora">17:40</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl13_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl13_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl13_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl13_lblJueves">0258</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl13_lblViernes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl13_lblSabado">0561</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl13_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl14_lblHora">18:30</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl14_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl14_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl14_lblMiercoles">0779</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl14_lblJueves">0772<br>0258</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl14_lblViernes">0561</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl14_lblSabado">0720<br>0561</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl14_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl15_lblHora">19:15</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl15_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl15_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl15_lblMiercoles">0779</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl15_lblJueves">0772</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl15_lblViernes">0561</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl15_lblSabado">0720</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl15_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl16_lblHora">20:00</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl16_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl16_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl16_lblMiercoles">0779</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl16_lblJueves">0772</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl16_lblViernes">0561<br>1364</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl16_lblSabado">0720</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl16_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl17_lblHora">20:45</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl17_lblLunes">0779</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl17_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl17_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl17_lblJueves">0772</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl17_lblViernes">1364</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl17_lblSabado">&nbsp;</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl17_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl18_lblHora">21:30</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl18_lblLunes">0779</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl18_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl18_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl18_lblJueves">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl18_lblViernes">1364</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl18_lblSabado">&nbsp;</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl18_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl19_lblHora">22:15</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl19_lblLunes">0779</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl19_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl19_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl19_lblJueves">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl19_lblViernes">1364</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl19_lblSabado">&nbsp;</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl19_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+									<tr>
+										<td align="CENTER">
+											<font face="ARIAL" size="1">&nbsp;<span id="rptHorario_ctl20_lblHora">23:00</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl20_lblLunes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl20_lblMartes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl20_lblMiercoles">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+										<font face="ARIAL">
+												<span id="rptHorario_ctl20_lblJueves">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl20_lblViernes">&nbsp;</span>
+											</font>
+										</td>
+										
+										<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl20_lblSabado">&nbsp;</span>
+											</font>
+										</td>
+											<td style="font-size: 7pt;" align="CENTER">
+											<font face="ARIAL">
+												<span id="rptHorario_ctl20_lblDomingo">&nbsp;</span>
+											</font>
+										</td>
+									</tr>
+									
+								</tbody></table>
+							</td>
+						</tr>
+					</tbody></table>
+				</td>
+			</tr>
+			<tr height="2" valign="middle">
+				<td align="center">
+					<font face="ARIAL" size="5"><b>&nbsp;</b></font>
+				</td>
+			</tr>
+			<tr valign="top">
+				<td align="center">
+					<table border="0" bordercolor="BLACK" cellpadding="0" cellspacing="0" width="100%">
+						<tbody><tr valign="top">
+							<td style="width: 48%" align="CENTER" valign="top">
+								<table border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tbody><tr>
+										<td valign="top">
+											<table border="1" bordercolor="BLACK" cellpadding="0" cellspacing="0" width="100%">
+												<tbody><tr>
+													<td style="height: 21px; width: 50px;" align="CENTER">
+														<font face="ARIAL" size="1">&nbsp;CURSOS</font>
+													</td>
+													<td style="height: 21px; width: 40px;" align="CENTER">
+														<font face="ARIAL" size="1">&nbsp;CRÉD.</font>
+													</td>
+													<td style="height: 21px; width: 140px;" align="CENTER">
+														<font face="ARIAL" size="1">&nbsp;FECHA</font>
+													</td>
+													<td style="height: 21px; width: 55px;" align="CENTER">
+														<font face="ARIAL" size="1">&nbsp;USUARIO</font>
+													</td>
+                                                 		<td style="height: 21px; width:65px;" align="CENTER">
+														<font face="ARIAL" size="1">&nbsp;PROCESO</font>
+													</td>
+												</tr>
+												<tr>
+													<td align="CENTER">
+														<font face="ARIAL" size="1">&nbsp;<span id="lblNumCursos">7</span></font>
+													</td>
+													<td align="CENTER">
+														<font face="ARIAL" size="1">&nbsp;<span id="lblCreditos">27</span></font>
+													</td>
+													<td align="CENTER">
+														<font face="ARIAL" size="1">&nbsp;<span id="lblFecha">05/09/2014 19:16</span></font>
+													</td>
+													<td align="CENTER">
+														<font face="ARIAL" size="1">&nbsp;<span id="lblUsuario">I201013249</span></font>
+													</td>
+														<td align="CENTER">
+														<font face="ARIAL" size="1">&nbsp;<span id="lbIdMatric">772725</span></font>
+													</td>
+                                                  
+												</tr>
+											</tbody></table>
+										</td>
+									</tr>
+									<tr>
+										<td style="height: 19px" align="left">
+										</td>
+									</tr>
+								</tbody></table>
+							</td>
+							
+							<td align="CENTER">
+								<font face="ARIAL" size="1">&nbsp;</font>
+							</td>
+							<td align="top">
+								
+								<table border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tbody><tr>
+										<td>
+									
+											<table border="1" bordercolor="BLACK" cellpadding="0" cellspacing="0" width="100%">
+												<tbody><tr>
+													<td align="center" width="45px;"> <font face="ARIAL" size="1"><b>CURSO</b></font>
+													</td>
+													<td align="center" width="48px;"><font face="ARIAL" size="1"><b>DÍA</b></font>
+													</td>
+													<td align="center" width="45px;"><font face="ARIAL" size="1"><b>CLASE</b></font>
+													</td>
+													<td align="center" width="65px;"><font face="ARIAL" size="1"><b>F.INICIO</b></font>
+													</td>
+													<td align="center" width="85px;"><font face="ARIAL" size="1"><b>&nbsp;HORA&nbsp;</b></font>
+													</td>
+													<td align="center" width="47px;"><font face="ARIAL" size="1"><b>AULA</b></font>
+													</td>
+												</tr>
+												
+												<tr>
+													<td align="center">
+														<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl01_lblLCodCurso">0779</span></font>
+													</td>
+													<td align="center"><font face="ARIAL" size="1"><span id="rptListadoCursos_ctl01_lblLDia">Lunes</span>    </font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl01_lblLTipoClase">Taller</span></font>
+													</td>
+														<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl01_lblLFInicio">15/09/2014</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl01_lblLHora">21:20 - 23:00</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl01_lblLAula">A-102</span></font>
+													</td>
+												</tr>
+												
+												<tr>
+													<td align="center">
+														<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl02_lblLCodCurso">0779</span></font>
+													</td>
+													<td align="center"><font face="ARIAL" size="1"><span id="rptListadoCursos_ctl02_lblLDia">Miércoles</span>    </font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl02_lblLTipoClase">Taller</span></font>
+													</td>
+														<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl02_lblLFInicio">17/09/2014</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl02_lblLHora">18:50 - 20:30</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl02_lblLAula">A-102</span></font>
+													</td>
+												</tr>
+												
+												<tr>
+													<td align="center">
+														<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl03_lblLCodCurso">0258</span></font>
+													</td>
+													<td align="center"><font face="ARIAL" size="1"><span id="rptListadoCursos_ctl03_lblLDia">Jueves</span>    </font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl03_lblLTipoClase">Taller</span></font>
+													</td>
+														<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl03_lblLFInicio">18/09/2014</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl03_lblLHora">15:30 - 18:50</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl03_lblLAula">C-301</span></font>
+													</td>
+												</tr>
+												
+												<tr>
+													<td align="center">
+														<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl04_lblLCodCurso">0772</span></font>
+													</td>
+													<td align="center"><font face="ARIAL" size="1"><span id="rptListadoCursos_ctl04_lblLDia">Jueves</span>    </font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl04_lblLTipoClase">Teoría</span></font>
+													</td>
+														<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl04_lblLFInicio">18/09/2014</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl04_lblLHora">18:50 - 21:20</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl04_lblLAula">C-203</span></font>
+													</td>
+												</tr>
+												
+												<tr>
+													<td align="center">
+														<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl05_lblLCodCurso">0561</span></font>
+													</td>
+													<td align="center"><font face="ARIAL" size="1"><span id="rptListadoCursos_ctl05_lblLDia">Viernes</span>    </font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl05_lblLTipoClase">Teoría</span></font>
+													</td>
+														<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl05_lblLFInicio">19/09/2014</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl05_lblLHora">18:50 - 20:30</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl05_lblLAula">E-101</span></font>
+													</td>
+												</tr>
+												
+												<tr>
+													<td align="center">
+														<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl06_lblLCodCurso">1364</span></font>
+													</td>
+													<td align="center"><font face="ARIAL" size="1"><span id="rptListadoCursos_ctl06_lblLDia">Viernes</span>    </font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl06_lblLTipoClase">Taller</span></font>
+													</td>
+														<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl06_lblLFInicio">19/09/2014</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl06_lblLHora">20:30 - 23:00</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl06_lblLAula">C-301</span></font>
+													</td>
+												</tr>
+												
+												<tr>
+													<td align="center">
+														<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl07_lblLCodCurso">0561</span></font>
+													</td>
+													<td align="center"><font face="ARIAL" size="1"><span id="rptListadoCursos_ctl07_lblLDia">Sábado</span>    </font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl07_lblLTipoClase">Taller</span></font>
+													</td>
+														<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl07_lblLFInicio">20/09/2014</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl07_lblLHora">16:20 - 18:50</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl07_lblLAula">A-102</span></font>
+													</td>
+												</tr>
+												
+												<tr>
+													<td align="center">
+														<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl08_lblLCodCurso">0720</span></font>
+													</td>
+													<td align="center"><font face="ARIAL" size="1"><span id="rptListadoCursos_ctl08_lblLDia">Sábado</span>    </font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl08_lblLTipoClase">Teoría</span></font>
+													</td>
+														<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl08_lblLFInicio">20/09/2014</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl08_lblLHora">18:50 - 20:30</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl08_lblLAula">C-304</span></font>
+													</td>
+												</tr>
+												
+												<tr>
+													<td align="center">
+														<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl09_lblLCodCurso">1367</span></font>
+													</td>
+													<td align="center"><font face="ARIAL" size="1"><span id="rptListadoCursos_ctl09_lblLDia">Domingo</span>    </font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl09_lblLTipoClase">Teoría</span></font>
+													</td>
+														<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl09_lblLFInicio">21/09/2014</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1"><span id="rptListadoCursos_ctl09_lblLHora">08:00 - 09:40</span></font>
+													</td>
+													<td align="center">	<font face="ARIAL" size="1">&nbsp;<span id="rptListadoCursos_ctl09_lblLAula"></span></font>
+													</td>
+												</tr>
+												
+											</tbody></table>											
+									</td></tr>
+								</tbody></table>
+								
+							</td>
+						</tr>
+					</tbody></table>
+				</td>
+			</tr>
+			<tr align="center">
+				<td>
+                    <br>
+                    <table style="visibility: hidden;" bordercolordark="#FFFFFF" bordercolorlight="#000000" id="botonPrint2" border="1" bordercolor="#000000" cellpadding="0" cellspacing="0">
+						<tbody><tr>
+							<td style="CURSOR:pointer" onclick="Imprimir();" bgcolor="navy" align="center" height="25" width="100">
+								<font color="white" face="arial" size="2"><b>Imprimir</b></font></td>
+						</tr>
+					</tbody></table>
+				</td>
+			</tr>
+		</tbody></table>
+		<br></div>
+    </form>
+
+
+</body></html>
