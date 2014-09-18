@@ -37,6 +37,7 @@ public class Fragment_Images extends Fragment {
         super.onCreate(savedInstanceState);
         id_image = getArguments().getInt("id_image");
         id_mensaje = getArguments().getInt("id_mensaje");
+
     }
 
     @Override

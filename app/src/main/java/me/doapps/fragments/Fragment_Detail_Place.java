@@ -41,6 +41,7 @@ public class Fragment_Detail_Place extends Fragment_Master {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        showMenu(true);
     }
 
     @Override

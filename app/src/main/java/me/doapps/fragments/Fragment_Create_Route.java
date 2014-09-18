@@ -31,7 +31,7 @@ import me.doapps.views.View_Place_Region;
 /**
  * Created by jnolascob on 17/09/2014.
  */
-public class Fragment_Create_Route extends Fragment {
+public class Fragment_Create_Route extends Fragment_Master {
     private LinearLayout frame_places_region;
     private Button btn_add_place;
     private Button btn_create_route;
@@ -46,6 +46,7 @@ public class Fragment_Create_Route extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        showMenu(true);
     }
 
     @Override
@@ -127,7 +128,7 @@ public class Fragment_Create_Route extends Fragment {
                     route_dto.setRoute_likes_count(0);
                     route_dto.setRoute_name("Ruta de Angel");
                     route_dto.setRoute_json_array_place_thumbail(jsonArray.toString());
-                    route_dto.setRoute_url_image("http://turandino.com/wp-content/uploads/2013/11/lima_de_noche.jpg");
+                    route_dto.setRoute_url_image("http://www.mesamenu.com/images/dishes/Mayta-SalmonTostado.jpg");
                     route_dto.saveInBackground(new SaveCallback() {
                         @Override
                         public void done(ParseException e) {

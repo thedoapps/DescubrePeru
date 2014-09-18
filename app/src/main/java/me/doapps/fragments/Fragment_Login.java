@@ -77,13 +77,13 @@ public class Fragment_Login extends Fragment_Master {
                             makeMeRequest();
                             /*getActivity().finish();
                             getActivity().startActivity(new Intent(getActivity(),DescubrePeru.class));*/
-                            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,Fragment_Create_Route.newInstance()).addToBackStack(null).commit();
+                            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,Fragment_Type_Route.newInstance()).addToBackStack(null).commit();
 
                         } else {
                             makeMeRequest();
                             /*getActivity().finish();
                             getActivity().startActivity(new Intent(getActivity(),DescubrePeru.class));*/
-                            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,Fragment_Create_Route.newInstance()).addToBackStack(null).commit();
+                            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,Fragment_Type_Route.newInstance()).addToBackStack(null).commit();
                         }
                     }
                 });
