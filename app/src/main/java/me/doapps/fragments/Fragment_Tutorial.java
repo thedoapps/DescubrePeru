@@ -51,7 +51,8 @@ public class Fragment_Tutorial extends Fragment {
 
     class Adapter_Fragment extends FragmentPagerAdapter {
 
-        int[] id_images = {R.drawable.portada_ruta_gastronomica,R.drawable.portada_ruta_turistica,R.drawable.portada_ruta_turistica};
+        int[] id_mensajes = {R.string.tutorial_turismo,R.string.tutorial_gastronomia,R.string.tutorial_nocturno};
+         int[] id_images = {R.drawable.portada_ruta_gastronomica,R.drawable.portada_ruta_turistica,R.drawable.portada_ruta_turistica};
 
         public Adapter_Fragment(FragmentManager fm) {
             super(fm);
@@ -59,7 +60,7 @@ public class Fragment_Tutorial extends Fragment {
 
         @Override
         public Fragment getItem(int position) {
-            return Fragment_Images.newInstance(id_images[position]);
+            return Fragment_Images.newInstance(id_images[position],id_mensajes[position]);
         }
 
         @Override

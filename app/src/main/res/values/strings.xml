@@ -25,6 +25,11 @@
     <string name="route_create">Crear Ruta</string>
     <!-- Register Place -->
 
+    <string name="tutorial_crear">Crear</string>
+    <string name="tutorial_entrar">Entrar</string>
+    <string name="tutorial_turismo">Llenar aqui angel</string>
+    <string name="tutorial_gastronomia">Llenar aqui angel</string>
+    <string name="tutorial_nocturno">Llenar aqui angel</string>
 
     <string name="app_id">BKNI1bsBMI0jWhzCitMgsW9EZEaUC8n9N8K4lTUt</string>
     <string name="client_key">MJYQch3xqxxOZqrioO93Jgr2wAtQZUDsXEBr30Fb</string>

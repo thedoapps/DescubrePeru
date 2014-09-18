@@ -73,8 +73,8 @@ public class DescubrePeru extends ActionBarActivity {
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#4D000000")));
         actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#4D000000")));
 
-        getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayShowCustomEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getSupportActionBar().setIcon(null);
         getSupportActionBar().setTitle("");
