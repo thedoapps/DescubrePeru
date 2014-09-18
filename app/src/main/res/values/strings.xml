@@ -27,9 +27,9 @@
 
     <string name="tutorial_crear">Crear</string>
     <string name="tutorial_entrar">Entrar</string>
-    <string name="tutorial_turismo">Llenar aqui angel</string>
-    <string name="tutorial_gastronomia">Llenar aqui angel</string>
-    <string name="tutorial_nocturno">Llenar aqui angel</string>
+    <string name="tutorial_turismo">Conoce todos los rincones del Perú</string>
+    <string name="tutorial_gastronomia">Crea y comparte las rutas que seguiste en tu viaje</string>
+    <string name="tutorial_nocturno">Ayuda a los turistas a conocer nuestro Perú </string>
 
     <string name="region_lima">Lima</string>
     <string name="region_ica">Ica</string>
