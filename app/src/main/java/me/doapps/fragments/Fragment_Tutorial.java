@@ -50,7 +50,9 @@ public class Fragment_Tutorial extends Fragment {
         getView().findViewById(R.id.btn_crear_ruta).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container, Fragment_Route_List.newInstance()).addToBackStack(null).commit();
+                //getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container, Fragment_Route_List.newInstance()).addToBackStack(null).commit();
+                //getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container, Fragment_Route_Map.newInstance()).addToBackStack(null).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container, Fragment_Create_Route.newInstance()).addToBackStack(null).commit();
             }
         });
 
