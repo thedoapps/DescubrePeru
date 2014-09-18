@@ -23,15 +23,15 @@ import me.doapps.views.View_Route;
 /**
  * Created by Gantz on 17/09/14.
  */
-public class Fragment_Region extends Fragment {
+public class Fragment_Principal extends Fragment {
 
     protected Adapter_Fragment mAdapter;
     protected ViewPager mPager;
     protected PageIndicator mIndicator;
     protected LinearLayout frame_routes;
 
-    public static Fragment_Region newInstance() {
-        return new Fragment_Region();
+    public static Fragment_Principal newInstance() {
+        return new Fragment_Principal();
     }
 
     @Override

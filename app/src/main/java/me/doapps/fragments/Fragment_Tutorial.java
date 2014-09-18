@@ -1,7 +1,6 @@
 package me.doapps.fragments;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -51,14 +50,14 @@ public class Fragment_Tutorial extends Fragment {
         getView().findViewById(R.id.btn_crear_ruta).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container, Fragment_Region.newInstance()).addToBackStack(null).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container, Fragment_Principal.newInstance()).addToBackStack(null).commit();
             }
         });
 
         getView().findViewById(R.id.btn_entrar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container, Fragment_Region.newInstance()).addToBackStack(null).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container, Fragment_Principal.newInstance()).addToBackStack(null).commit();
             }
         });
     }

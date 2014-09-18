@@ -12,7 +12,16 @@
         android:id="@+id/image_tutorial"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/portada_ruta_turistica" />
+        android:src="@drawable/portada_ruta_turistica"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="#99000000"
+        android:layout_gravity="center"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,5 +34,6 @@
         android:gravity="center"
         android:textColor="@color/color_blanco"
         android:layout_gravity="center" />
+
 
 </FrameLayout>
