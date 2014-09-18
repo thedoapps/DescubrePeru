@@ -24,6 +24,7 @@ public class Place_DTO extends ParseObject {
     public Place_DTO() {
     }
 
+
     public String getPlace_name() {
         return getString("place_name");
     }

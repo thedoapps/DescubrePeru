@@ -3,10 +3,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="@color/flatui_silver"
+    android:background="@drawable/portada_ruta_gastronomica_blur"
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:padding="20dp"
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:layout_gravity="center"
@@ -17,7 +18,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_launcher" />
+            android:src="@drawable/cristian_photo" />
 
         <LinearLayout
             android:layout_weight="4"
@@ -26,10 +27,13 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/txt_user_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:padding="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
                 android:text="@string/route_name" />
 
             <LinearLayout
@@ -38,23 +42,40 @@
 
                 <ImageView
                     android:padding="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:src="@drawable/like" />
 
                 <TextView
+                    android:id="@+id/txt_count_likes"
                     android:padding="10dp"
                     android:gravity="center"
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:text="@string/route_likes" />
             </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/frame_places"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        </LinearLayout>
+    </ScrollView>
+
     <ListView
+        android:visibility="gone"
         android:id="@+id/list_route"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></ListView>
