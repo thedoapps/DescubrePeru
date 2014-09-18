@@ -19,8 +19,8 @@
     <string name="comment_place">Ingrese comentario</string>
     <string name="show_comments">Ver Comentarios</string>
     <!-- Item route List-->
-    <string name="route_name">Ruta de Cristian</string>
-    <string name="route_likes">8 Likes</string>
+    <string name="route_name">Ruta de Angel</string>
+    <string name="route_likes">0 Likes</string>
     <!-- Fragment Region -->
     <string name="route_create">Crear Ruta</string>
     <!-- Register Place -->
