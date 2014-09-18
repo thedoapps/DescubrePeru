@@ -25,4 +25,4 @@
     <item android:state_focused="true"                                                             android:drawable="@drawable/com_facebook_picker_list_focused" />
 
 </selector>
-<!-- From: file:/Users/Gantz/Desktop/Hackaton_App_Peru/DescubrePeru/FacebookSDK/res/drawable/com_facebook_picker_list_selector.xml -->
+<!-- From: file:/F:/ANDROID/DescubrePeru2/DescubrePeru/FacebookSDK/res/drawable/com_facebook_picker_list_selector.xml -->
