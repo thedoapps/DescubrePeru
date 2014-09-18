@@ -2,15 +2,18 @@ package me.doapps.beans;
 
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 import org.json.JSONArray;
+
+import java.io.Serializable;
 
 /**
  * Created by Gantz on 17/09/14.
  */
 
 @ParseClassName("Route")
-public class Route_DTO extends ParseObject {
+public class Route_DTO extends ParseObject implements Serializable {
 
     private String route_name;
     private int route_likes_count;
@@ -20,6 +23,7 @@ public class Route_DTO extends ParseObject {
     private String route_url_user_image;
     private String route_json_array_place_thumbail;
     private String route_region_id;
+    private String route_url_image;
 
     public Route_DTO() {
     }
@@ -86,5 +90,17 @@ public class Route_DTO extends ParseObject {
 
     public void setRoute_likes_count(int route_likes_count) {
         put("route_likes_count",route_likes_count);
+    }
+
+    public String getRoute_url_image(){
+        return getString("routes_url_image");
+    }
+    public void setRoute_url_image(String route_url_image){
+        put("routes_url_image", route_url_image);
+    }
+
+    /*get all routes*/
+    public static ParseQuery<Route_DTO> getQuery(){
+        return ParseQuery.getQuery(Route_DTO.class);
     }
 }

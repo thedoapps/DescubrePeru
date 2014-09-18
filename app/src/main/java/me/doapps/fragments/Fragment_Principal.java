@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,9 +15,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
 import com.viewpagerindicator.CirclePageIndicator;
 import com.viewpagerindicator.PageIndicator;
 
+import java.util.List;
+
+import me.doapps.beans.Place_DTO;
 import me.doapps.beans.Route_DTO;
 import me.doapps.descubreperu.DescubrePeru;
 import me.doapps.descubreperu.R;
@@ -64,10 +71,25 @@ public class Fragment_Principal extends Fragment_Master {
         mIndicator.setViewPager(mPager);
 
         frame_routes = (LinearLayout)getView().findViewById(R.id.frame_routes);
-        for (int i = 0; i < 10; i++) {
-            View_Route view_route = new View_Route(getActivity(),new Route_DTO());
-            frame_routes.addView(view_route);
-        }
+        /*set timeline*/
+        ParseQuery<Route_DTO> queryRoutes = Route_DTO.getQuery();
+        queryRoutes.findInBackground(new FindCallback<Route_DTO>() {
+            @Override
+            public void done(List<Route_DTO> route_dtos, ParseException e) {
+                for (int i = 0; i < route_dtos.size(); i++) {
+                    View_Route view_route = new View_Route(getActivity(),route_dtos.get(i));
+                    view_route.setInterface_route(new View_Route.Interface_Route() {
+                        @Override
+                        public void getRoute(Route_DTO route_dto) {
+                            Log.e("route", String.valueOf(route_dto));
+                            ((DescubrePeru)getActivity()).getSupportFragmentManager().beginTransaction().add(R.id.container, Fragment_Route_Map.newInstance(route_dto),"fragment_producto").addToBackStack("detalle_producto").commit();
+                        }
+                    });
+                    frame_routes.addView(view_route);
+                }
+            }
+        });
+
     }
 
     class Adapter_Fragment extends FragmentPagerAdapter {

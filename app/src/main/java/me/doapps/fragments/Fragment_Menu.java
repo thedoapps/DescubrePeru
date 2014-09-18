@@ -83,6 +83,15 @@ public class Fragment_Menu extends Fragment {
             }
         });
 
+        getView().findViewById(R.id.option_rutas_gastronomicas).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager manager = getActivity().getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.container, Fragment_Create_Route.newInstance(), "fragment_create_route").commit();
+                ((DescubrePeru)getActivity()).sm_menu.toggle();
+            }
+        });
+
         getView().findViewById(R.id.option_rutas_nocturnas).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

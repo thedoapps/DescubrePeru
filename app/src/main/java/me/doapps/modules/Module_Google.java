@@ -141,7 +141,7 @@ public class Module_Google {
                                     String lng = jsonArray.getJSONObject(i).getJSONObject("geometry").getJSONObject("location").getString("lng");
                                     ParseGeoPoint temp_geopoint = new ParseGeoPoint(Double.valueOf(lat), Double.valueOf(lng));
 
-                                    place_dtos.add(new Temp_Place_DTO(temp_name, ""));
+                                    place_dtos.add(new Temp_Place_DTO(temp_name, temp_data_detail, temp_geopoint));
                                 }
                                 interface_nearbyPlace.getNearbyPlace(true, place_dtos);
                             }else{

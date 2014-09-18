@@ -4,6 +4,7 @@ import com.parse.ParseClassName;
 import com.parse.ParseFile;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 /**
  * Created by Gantz on 17/09/14.
@@ -87,5 +88,10 @@ public class Place_DTO extends ParseObject {
 
     public void setPlace_description(String place_description) {
         put("place_description",place_description);
+    }
+
+    /*get all places*/
+    public static ParseQuery<Place_DTO> getQuery(){
+        return ParseQuery.getQuery(Place_DTO.class);
     }
 }

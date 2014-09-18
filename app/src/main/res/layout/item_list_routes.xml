@@ -21,7 +21,7 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher"
+            android:src="@drawable/angel_photo"
             android:id="@+id/user_image" />
 
         <ImageView

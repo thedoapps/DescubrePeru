@@ -6,7 +6,7 @@ package me.doapps.ws;
 public class WS_Descubre {
     /*Google places - PLACES*/
     public static final String WS_NEARBY_SEARCH_ = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
-    public static final String WS_NEARBY_SEARCH = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-12.053932,-77.041071&radius=500&types=&name=s&sensor=true&key=AIzaSyC7VTy1fw8NrWq6Nfs_UHj6OuTnZqmjeP4";
+    public static final String WS_NEARBY_SEARCH = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-12.053932,-77.041071&radius=4000&types=food|restaurant&name=s&sensor=true&key=AIzaSyC7VTy1fw8NrWq6Nfs_UHj6OuTnZqmjeP4";
 
     public static final String WS_TEXT_SEARCH = "https://maps.googleapis.com/maps/api/place/textsearch/json";
     public static final String WS_RADAR_SEARCH = "https://maps.googleapis.com/maps/api/place/radarsearch/json";

@@ -27,7 +27,7 @@
             android:id="@+id/user_image"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/user"
+            android:src="@drawable/angel_photo"
             android:layout_gravity="center_vertical" />
 
         <TextView
@@ -39,7 +39,7 @@
             android:textColor="@color/color_blanco"
             android:gravity="center"
             android:textStyle="bold"
-            android:id="@+id/route_description"
+            android:id="@+id/route_name"
             android:layout_gravity="center"
             android:layout_weight="1" />
 
@@ -48,16 +48,30 @@
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             >
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="45dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/like"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/like"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/txt_likes_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+
         </LinearLayout>
     </LinearLayout>
 

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,9 +22,14 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import me.doapps.beans.Route_DTO;
 import me.doapps.descubreperu.DescubrePeru;
 import me.doapps.descubreperu.R;
 import me.doapps.utils.Util_GPS;
@@ -36,13 +42,20 @@ public class Fragment_Route_Map extends Fragment_Master {
     private LatLng coordinateMap;
     private String strCoordenadas = "-12.056313,-77.037348;-12.056471,-77.036629;-12.057190,-77.036870";
 
-    public static final Fragment_Route_Map newInstance() {
-        return new Fragment_Route_Map();
+    private Route_DTO route_dto;
+
+    public static final Fragment_Route_Map newInstance(Route_DTO route_dto) {
+        Fragment_Route_Map fragment_route_map = new Fragment_Route_Map();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("route_dto", route_dto);
+        fragment_route_map.setArguments(bundle);
+        return fragment_route_map;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        route_dto = (Route_DTO)getArguments().getSerializable("route_dto");
     }
 
     @Override
@@ -54,7 +67,22 @@ public class Fragment_Route_Map extends Fragment_Master {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        showMarks(strCoordenadas);
+        Log.e("route_dto", String.valueOf(route_dto));
+        String array_latlong = "";
+        try {
+            JSONArray jsonArray = new JSONArray(route_dto.getRoute_json_array_place_thumbail());
+            Log.e("jsonarray", jsonArray.toString());
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = new JSONObject(jsonArray.getString(i));
+                Log.e("json", jsonObject.toString());
+                array_latlong = array_latlong+jsonObject.getJSONObject("geometry").getJSONObject("location").getString("lat")+","+jsonObject.getJSONObject("geometry").getJSONObject("location").getString("lng")+";";
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        showMarks(array_latlong);
     }
 
     private List<LatLng> getCoordenadasList(String strCoordenadas) {
@@ -86,13 +114,13 @@ public class Fragment_Route_Map extends Fragment_Master {
         for (int i = 0; i < coordenadas.size(); i++) {
             map.addMarker(
                     new MarkerOptions().position(coordenadas.get(i))
-                            .title("Starbucks").snippet("food, coffee").draggable(true)
+                            //.title("Starbucks").snippet("food, coffee").draggable(true)
                             .icon(BitmapDescriptorFactory.fromResource(R.drawable.icono_ruta_gastronomica))
             )
                     .showInfoWindow();
         }
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                coordenadas.get(coordenadas.size() - 1), 16));
+                coordenadas.get(coordenadas.size() - 1), 13));
         map.getUiSettings().setZoomControlsEnabled(false);
     }
 

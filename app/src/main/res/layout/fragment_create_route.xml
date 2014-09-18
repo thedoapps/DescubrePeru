@@ -18,7 +18,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView"
-                android:src="@drawable/background_ica"
+                android:src="@drawable/lima"
                 android:scaleType="centerCrop"
                 android:layout_gravity="center_horizontal" />
 
@@ -29,7 +29,7 @@
                 android:layout_gravity="center"
                 android:textColor="@color/white"
                 android:textSize="50sp"
-                android:text="Ica" />
+                android:text="LIMA" />
         </FrameLayout>
 
         <LinearLayout
