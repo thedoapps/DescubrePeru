@@ -1,5 +1,6 @@
 package me.doapps.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.MenuItem;
@@ -28,7 +29,7 @@ public class Fragment_Master extends Fragment {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if(ParseUser.getCurrentUser() != null && ParseFacebookUtils.getSession() != null){
-                    Toast.makeText(getActivity(),"Usuario Registrado",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Usuario Registrado", Toast.LENGTH_SHORT).show();
                 }else{
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,Fragment_Login.newInstance()).addToBackStack(null).commit();
                 }

@@ -3,6 +3,8 @@ package me.doapps.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import me.doapps.beans.User_DTO;
+import me.doapps.descubreperu.DescubrePeru;
 import me.doapps.descubreperu.R;
 import me.doapps.dialog.Dialog_Descubre_Peru;
 import me.doapps.utils.Util_Fonts;
@@ -72,8 +75,13 @@ public class Fragment_Login extends Fragment_Master {
                             Log.e("MyApp", "Uh oh. The user cancelled the Facebook login.");
                         } else if (user.isNew()) {
                             makeMeRequest();
+                            getActivity().finish();
+                            getActivity().startActivity(new Intent(getActivity(),DescubrePeru.class));
+
                         } else {
                             makeMeRequest();
+                            getActivity().finish();
+                            getActivity().startActivity(new Intent(getActivity(),DescubrePeru.class));
                         }
                     }
                 });
