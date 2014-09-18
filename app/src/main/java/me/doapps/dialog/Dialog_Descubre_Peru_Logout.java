@@ -46,8 +46,6 @@ public class Dialog_Descubre_Peru_Logout extends AlertDialog {
         final View view = inflater.inflate(R.layout.dialog_descubre_peru_logout, null);
         setView(view);
 
-        setCancelable(false);
-
         TextView txtdescripcionlife = (TextView) view.findViewById(R.id.txtavisodialoglife);
         Button btncerrarsesion = (Button) view.findViewById(R.id.btn_cerrar_sesion);
 

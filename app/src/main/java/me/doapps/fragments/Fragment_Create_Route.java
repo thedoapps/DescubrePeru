@@ -105,7 +105,7 @@ public class Fragment_Create_Route extends Fragment {
         btn_add_place.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container, Fragment_Register_Place.newInstance()).addToBackStack(null).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container, Fragment_Register_Place.newInstance(),"fragment_register_place").addToBackStack("fragment_register_place").commit();
             }
         });
     }

@@ -3,27 +3,18 @@
 
     <!-- Estado Presionado -->
     <item android:state_pressed="true"><shape android:shape="rectangle">
-        <corners android:radius="8dp" />
-
-        <stroke android:width="2dp" android:color="@color/rojo_pomegranate" />
-
+        <corners android:radius="50dp" />
         <solid android:color="@color/color_blanco" />
     </shape></item>
     <!-- Estado Focuseado -->
     <item android:state_focused="true"><shape android:shape="rectangle">
-        <corners android:radius="8dp" />
-
-        <stroke android:width="2dp" android:color="@color/rojo_pomegranate" />
-
+        <corners android:radius="50dp" />
         <solid android:color="@color/color_blanco" />
     </shape></item>
 
     <!-- Estado Normal -->
     <item><shape android:shape="rectangle">
-        <corners android:radius="8dp" />
-
-        <stroke android:width="2dp" android:color="@color/rojo_pomegranate" />
-
+        <corners android:radius="50dp" />
         <solid android:color="@color/color_blanco" />
     </shape></item>
 
