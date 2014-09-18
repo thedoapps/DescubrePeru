@@ -18,6 +18,11 @@ public class Temp_Place_DTO {
 
     public Temp_Place_DTO(){}
 
+    public Temp_Place_DTO(String place_name, String place_description){
+        this.place_name = place_name;
+        this.place_description = place_description;
+    }
+
     public Temp_Place_DTO(String place_name, String place_json_data_detail, ParseGeoPoint place_geopoint){
         this.place_name = place_name;
         this.place_json_data_detail = place_json_data_detail;

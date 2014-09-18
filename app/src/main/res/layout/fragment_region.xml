@@ -32,22 +32,9 @@
             <FrameLayout
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
-                android:layout_height="200dp">
+                android:layout_height="200dp"
+                android:id="@+id/frame_region_header">
 
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/pager"
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
-
-                </android.support.v4.view.ViewPager>
-
-                <com.viewpagerindicator.CirclePageIndicator
-                    android:id="@+id/indicator"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    app:radius="3dp"
-                    android:layout_marginBottom="15dp" />
             </FrameLayout>
 
             <ScrollView
