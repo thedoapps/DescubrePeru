@@ -10,6 +10,7 @@ import me.doapps.descubreperu.R;
 
 import com.parse.Parse;
 import com.parse.ParseACL;
+import com.parse.ParseFacebookUtils;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
@@ -31,6 +32,7 @@ public class Descubre_Peru_Application extends Application {
         ParseObject.registerSubclass(User_DTO.class);
 
         Parse.initialize(this,getString(R.string.app_id),getString(R.string.client_key));
+        ParseFacebookUtils.initialize(getString(R.string.facebook_app_id));
         ParseUser.enableAutomaticUser();
 
         ParseACL defaultACL = new ParseACL();

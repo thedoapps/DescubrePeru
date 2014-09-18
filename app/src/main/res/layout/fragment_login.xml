@@ -19,6 +19,7 @@
             android:textColor="@color/white"
             android:background="@drawable/holo_flat_button_facebook"
             android:layout_margin="10dp"
+            android:id="@+id/btnentrarfacebook"
             android:text="@string/login_fb"
             android:layout_gravity="center" />
 
