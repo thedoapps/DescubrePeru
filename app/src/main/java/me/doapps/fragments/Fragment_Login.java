@@ -75,19 +75,13 @@ public class Fragment_Login extends Fragment_Master {
                             Log.e("MyApp", "Uh oh. The user cancelled the Facebook login.");
                         } else if (user.isNew()) {
                             makeMeRequest();
-                            FragmentManager manager = ((DescubrePeru)getActivity()).getSupportFragmentManager();
-                            FragmentTransaction trans = manager.beginTransaction();
-                            trans.remove(Fragment_Login.this);
-                            trans.commit();
-                            manager.popBackStack();
+                            getActivity().finish();
+                            getActivity().startActivity(new Intent(getActivity(),DescubrePeru.class));
 
                         } else {
                             makeMeRequest();
-                            FragmentManager manager = ((DescubrePeru)getActivity()).getSupportFragmentManager();
-                            FragmentTransaction trans = manager.beginTransaction();
-                            trans.remove(Fragment_Login.this);
-                            trans.commit();
-                            manager.popBackStack();
+                            getActivity().finish();
+                            getActivity().startActivity(new Intent(getActivity(),DescubrePeru.class));
                         }
                     }
                 });

@@ -77,16 +77,6 @@ public class DescubrePeru extends ActionBarActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        FragmentManager fm = getSupportFragmentManager();
-        if (fm.getBackStackEntryCount() > 0) {
-            fm.popBackStack();
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         ParseFacebookUtils.finishAuthentication(requestCode, resultCode, data);
