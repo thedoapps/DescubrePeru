@@ -40,6 +40,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:id="@+id/option_rutas_turisticas"
+        android:padding="10dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
@@ -50,7 +51,7 @@
             android:adjustViewBounds="true"
             android:scaleType="centerInside"
             android:src="@drawable/icono_turistico"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="center"
             android:layout_marginRight="5dp" />
 
         <TextView
@@ -71,7 +72,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/option_rutas_gastronomicas"
         android:padding="10dp"
-        android:layout_marginTop="10dp">
+        >
 
         <ImageView
             android:layout_width="wrap_content"
