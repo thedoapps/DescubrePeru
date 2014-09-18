@@ -24,6 +24,7 @@
     <!-- Fragment Region -->
     <string name="route_create">Crear Ruta</string>
     <!-- Register Place -->
+    <string name="register_place">Registrar Sitio</string>
 
     <string name="tutorial_crear">Crear</string>
     <string name="tutorial_entrar">Entrar</string>

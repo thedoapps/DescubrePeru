@@ -61,7 +61,7 @@
                 android:layout_height="45dp"
                 android:textColor="@color/white"
                 android:background="@drawable/holo_flat_button_red"
-                android:text="@string/comment_place" />
+                android:text="@string/register_place" />
 
         </LinearLayout>
     </LinearLayout>

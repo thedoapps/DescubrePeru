@@ -55,7 +55,7 @@ public class Fragment_Register_Place extends Fragment_Master {
     /*Google Maps*/
     private void setUpMapIfNeeded() {
         if (map == null) {
-            map = ((SupportMapFragment) ((DescubrePeru)getActivity()).getSupportFragmentManager().findFragmentById(R.id.detail_map)).getMap();
+            map = ((SupportMapFragment) ((DescubrePeru)getActivity()).getSupportFragmentManager().findFragmentById(R.id.place_map)).getMap();
             if (map != null) {
                 setUpMap();
             }
