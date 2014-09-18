@@ -38,4 +38,5 @@
     <string name="app_id">BKNI1bsBMI0jWhzCitMgsW9EZEaUC8n9N8K4lTUt</string>
     <string name="client_key">MJYQch3xqxxOZqrioO93Jgr2wAtQZUDsXEBr30Fb</string>
     <string name="google_maps_key">AIzaSyD4sKf-fUsUHXI2N8bxHHShbIOwlzC_jYM</string>
+    <string name="facebook_app_id">352674628234949</string>
 </resources>
