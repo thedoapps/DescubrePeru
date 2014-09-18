@@ -22,6 +22,7 @@ import me.doapps.fragments.Fragment_Tutorial;
 public class DescubrePeru extends ActionBarActivity {
 
     public SlidingMenu sm_menu;
+    public MenuItem item_add_route;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,8 @@ public class DescubrePeru extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.descubre_peru, menu);
+        item_add_route = menu.getItem(0);
+        item_add_route.setVisible(false);
         return true;
     }
 

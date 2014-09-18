@@ -1,7 +1,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".DescubrePeru" >
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+    >
+
+    <item
+        android:id="@+id/action_timeline"
+        android:title="Ver Timeline"
+        android:icon="@drawable/ic_action_add"
+        android:showAsAction="always"
+        app:showAsAction="always"/>
+
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
         android:orderInCategory="100"
