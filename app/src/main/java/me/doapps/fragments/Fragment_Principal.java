@@ -68,17 +68,6 @@ public class Fragment_Principal extends Fragment_Master {
             View_Route view_route = new View_Route(getActivity(),new Route_DTO());
             frame_routes.addView(view_route);
         }
-
-        /**
-         * Event Item
-         */
-        getMenuInstance().setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,Fragment_Login.newInstance()).addToBackStack(null).commit();
-                return false;
-            }
-        });
     }
 
     class Adapter_Fragment extends FragmentPagerAdapter {

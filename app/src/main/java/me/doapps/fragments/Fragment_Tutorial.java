@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.viewpagerindicator.CirclePageIndicator;
 import com.viewpagerindicator.PageIndicator;
 
+import me.doapps.descubreperu.DescubrePeru;
 import me.doapps.descubreperu.R;
 
 /**
@@ -30,6 +31,7 @@ public class Fragment_Tutorial extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ((DescubrePeru)getActivity()).getSupportActionBar().hide();
     }
 
     @Override

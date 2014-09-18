@@ -7,8 +7,8 @@ import com.parse.ParseUser;
  * Created by Gantz on 17/09/14.
  */
 
-@ParseClassName("User")
-public class User_DTO extends ParseUser{
+@ParseClassName("_User")
+public class User_DTO extends ParseUser {
 
     private String user_name;
     private String user_url_image;

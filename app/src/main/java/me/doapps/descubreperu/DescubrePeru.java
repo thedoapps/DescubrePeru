@@ -1,6 +1,7 @@
 package me.doapps.descubreperu;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.view.Window;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingActivity;
+import com.parse.ParseFacebookUtils;
 
 import me.doapps.fragments.Fragment_Menu;
 import me.doapps.fragments.Fragment_Tutorial;
@@ -80,7 +82,7 @@ public class DescubrePeru extends ActionBarActivity {
         //getSupportActionBar().setDisplayShowCustomEnabled(true);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        getSupportActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+        getSupportActionBar().setIcon(R.drawable.icono_75_75);
         getSupportActionBar().setTitle("");
     }
 
@@ -92,5 +94,11 @@ public class DescubrePeru extends ActionBarActivity {
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        ParseFacebookUtils.finishAuthentication(requestCode, resultCode, data);
     }
 }

@@ -4,19 +4,19 @@
     android:orientation="vertical"
     android:background="@drawable/holo_flat_button_plomo_claro"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:padding="25dp">
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:layout_gravity="center"
         android:scaleType="centerInside"
         android:layout_marginBottom="10dp"
         android:src="@drawable/logo_300_75"
-        android:id="@+id/imageView" />
+        android:id="@+id/imagencategoriapregunta" />
 
     <TextView
         android:layout_width="match_parent"
@@ -26,15 +26,20 @@
         android:textColor="#7B6569"
         android:maxLines="10"
         android:gravity="center"
-        android:text="Cargando ...!"
+        android:text="¿Desea cerrar sesión?"
         android:id="@+id/txtavisodialoglife"
         android:layout_gravity="right" />
 
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBar"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5dp" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/holo_flat_button_rojo"
+        android:textColor="@color/color_blanco"
+        android:textStyle="bold"
+        android:text="Cerrar Sesión"
+        android:id="@+id/btn_cerrar_sesion"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>

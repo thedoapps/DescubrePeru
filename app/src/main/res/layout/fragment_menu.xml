@@ -32,6 +32,7 @@
             android:layout_gravity="left"
             android:gravity="center"
             android:layout_marginTop="5dp"
+            android:lines="1"
             android:textColor="@color/white"
             android:id="@+id/menu_nombre_usuario" />
     </LinearLayout>
@@ -44,18 +45,20 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:id="@+id/imageView2"
             android:adjustViewBounds="true"
-            android:scaleType="matrix"
+            android:scaleType="centerInside"
+            android:src="@drawable/icono_turistico"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="20dp" />
+            android:layout_marginRight="5dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Turisticas"
             android:textSize="22sp"
+            android:lines="1"
             android:layout_gravity="center"
             android:id="@+id/txt_option_rutas_turisticas"
             android:gravity="left"
@@ -72,10 +75,11 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:id="@+id/imageView3"
             android:adjustViewBounds="true"
-            android:scaleType="matrix"
+            android:scaleType="centerInside"
+            android:src="@drawable/icono_gastronomico"
             android:layout_gravity="center_vertical" />
 
         <TextView
@@ -85,7 +89,8 @@
             android:textSize="22sp"
             android:id="@+id/txt_option_rutas_gastronomicas"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
+            android:lines="1"
+            android:layout_marginLeft="5dp"
             android:gravity="left"
             android:textColor="@color/white" />
     </LinearLayout>
@@ -99,10 +104,11 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:id="@+id/imageView6"
             android:adjustViewBounds="true"
-            android:scaleType="matrix"
+            android:scaleType="centerInside"
+            android:src="@drawable/icono_nocturno"
             android:layout_gravity="center_vertical" />
 
         <TextView
@@ -110,10 +116,11 @@
             android:layout_height="wrap_content"
             android:text="Nocturnas"
             android:textSize="22sp"
+            android:lines="1"
             android:layout_gravity="center"
             android:gravity="left"
             android:id="@+id/txt_option_rutas_nocturnas"
             android:textColor="@color/white"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginLeft="5dp" />
     </LinearLayout>
 </LinearLayout>

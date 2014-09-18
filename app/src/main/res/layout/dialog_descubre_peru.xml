@@ -10,13 +10,13 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:layout_gravity="center"
         android:scaleType="centerInside"
         android:layout_marginBottom="10dp"
         android:src="@drawable/logo_300_75"
-        android:id="@+id/imageView" />
+        android:id="@+id/imagencategoriapregunta" />
 
     <TextView
         android:layout_width="match_parent"
@@ -26,15 +26,31 @@
         android:textColor="#7B6569"
         android:maxLines="10"
         android:gravity="center"
-        android:text="Cargando ...!"
+        android:text="Espere por favor...!"
         android:id="@+id/txtavisodialoglife"
         android:layout_gravity="right" />
+
 
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/progressBar"
+        android:id="@+id/progressBar2"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp" />
+
+    <EditText
+        android:background="@drawable/edittext_registro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="10dp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#7B6569"
+        android:hint="Codigo o Dni..."
+        android:id="@+id/edtcodigolife" />
 
 </LinearLayout>
