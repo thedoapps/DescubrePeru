@@ -1,6 +1,7 @@
 package me.doapps.modules;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -18,7 +19,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Method;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,14 +38,85 @@ public class Module_Google {
     private Interface_NearbyPlace interface_nearbyPlace;
     private Interface_TextSearch interface_textSearch;
     private Interface_DetailPlace interface_detailPlace;
+    private Interface_Search interface_search;
 
+    private String client_id = "3PILMRCUAH0DXRK1U3F0RR34CLIZKL1QYH0KZEPHUEU0DIEQ";
+    private String client_secret = "2VMV5UJIUWVOGXU5TEPFLIBNGW002KT3KAL3MBNZ3GZYCZIT";
+
+    /* obtenemos ddmmAAAA */
+    Calendar c = Calendar.getInstance();
+    SimpleDateFormat d = new SimpleDateFormat("yyyyMMdd");
+    String date_fsq = d.format(c.getTime());
 
     public Module_Google(Context context){
         this.context = context;
     }
 
+    /*Nearby Search - Foursquare*/
+    public void sendRequestSearch(final String location){
+        RequestQueue queue = Volley.newRequestQueue(context);
+        StringRequest jsonObjectRequest = new StringRequest(
+                com.android.volley.Request.Method.GET,
+                WS_Descubre.WS_FOUR,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            ArrayList<Temp_Place_DTO> place_dtos = new ArrayList<Temp_Place_DTO>();
+                            JSONObject jsonObject = new JSONObject(response);
+                            JSONObject jsonObjectResult = jsonObject.getJSONObject("response");
+
+                            JSONArray jsonArray = jsonObjectResult.getJSONArray("venues");
+
+                            Log.e("four_request", jsonObjectResult.toString());
+
+                            if(true){
+                                for (int i = 0; i < jsonArray.length(); i++) {
+                                    Temp_Place_DTO temp_place_dto = new Temp_Place_DTO();
+
+                                    String temp_name = jsonArray.getJSONObject(i).getString("name");
+                                    /*String temp_data_detail = jsonArray.getJSONObject(i).toString();
+                                    String lat = jsonArray.getJSONObject(i).getJSONObject("geometry").getJSONObject("location").getString("lat");
+                                    String lng = jsonArray.getJSONObject(i).getJSONObject("geometry").getJSONObject("location").getString("lng");
+                                    ParseGeoPoint temp_geopoint = new ParseGeoPoint(Double.valueOf(lat), Double.valueOf(lng));*/
+
+                                    place_dtos.add(new Temp_Place_DTO(temp_name, ""));
+                                }
+                                interface_search.getSearch(true, place_dtos);
+                            }else{
+                                interface_search.getSearch(false, null);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            interface_search.getSearch(false, null);
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        Toast.makeText(context, "Ocurrio un error de Conexion", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        )
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                Log.e("params", params.toString());
+                params.put("ll", "-12.0571345,-77.0373154");
+                params.put("client_id", client_id);
+                params.put("client_secret", client_secret);
+                params.put("v", "20140918");
+                Log.e("params", params.toString());
+                return params;
+            }
+        };
+        queue.add(jsonObjectRequest);
+    }
+
     /*Nearby Search*/
-    public void sendRequestNearbySearch(){
+    public void sendRequestNearbySearch(final String location){
         RequestQueue queue = Volley.newRequestQueue(context);
         StringRequest jsonObjectRequest = new StringRequest(
                 com.android.volley.Request.Method.GET,
@@ -54,9 +128,10 @@ public class Module_Google {
                             ArrayList<Temp_Place_DTO> place_dtos = new ArrayList<Temp_Place_DTO>();
                             JSONObject jsonObject = new JSONObject(response);
 
-                            String status = jsonObject.getString("status");
                             JSONArray jsonArray = jsonObject.getJSONArray("results");
-                            if(status.equals("OK")){
+                            Log.e("response", jsonArray.toString());
+
+                            if(true){
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     Temp_Place_DTO temp_place_dto = new Temp_Place_DTO();
 
@@ -66,7 +141,7 @@ public class Module_Google {
                                     String lng = jsonArray.getJSONObject(i).getJSONObject("geometry").getJSONObject("location").getString("lng");
                                     ParseGeoPoint temp_geopoint = new ParseGeoPoint(Double.valueOf(lat), Double.valueOf(lng));
 
-                                    place_dtos.add(new Temp_Place_DTO(temp_name, temp_data_detail, temp_geopoint));
+                                    place_dtos.add(new Temp_Place_DTO(temp_name, ""));
                                 }
                                 interface_nearbyPlace.getNearbyPlace(true, place_dtos);
                             }else{
@@ -89,13 +164,14 @@ public class Module_Google {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("location", "-12.056030,-77.036870");
+                Log.e("params", params.toString());
+                params.put("location", location);
                 params.put("radius", "500");
-                params.put("types", "food");
+                params.put("types", "");
                 params.put("name", "");
-                params.put("sensor", "false");
-                params.put("key", WS_Descubre.KEY_PLACE);
-
+                params.put("sensor", "true");
+                params.put("key", "AIzaSyC7VTy1fw8NrWq6Nfs_UHj6OuTnZqmjeP4");
+                Log.e("params", params.toString());
                 return params;
             }
         };
@@ -156,10 +232,6 @@ public class Module_Google {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("query", "cafe+lima");
-                params.put("sensor", "true");
-                params.put("key", WS_Descubre.KEY_PLACE);
-
                 return params;
             }
         };
@@ -222,7 +294,7 @@ public class Module_Google {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("query", "cafe+lima");
                 params.put("sensor", "true");
-                params.put("key", WS_Descubre.KEY_PLACE);
+                params.put("key", "");
 
                 return params;
             }
@@ -258,5 +330,15 @@ public class Module_Google {
     /*inner interface - Detail Place*/
     public interface Interface_DetailPlace{
         void getDetailPlace(boolean status, ArrayList<Place_DTO> place_dtos);
+    }
+
+    /*Search Foursquare*/
+    public void setInterface_search(Interface_Search interface_search){
+        this.interface_search = interface_search;
+    }
+
+    /*inner interface - Search Foursquare*/
+    public interface Interface_Search{
+        void getSearch(boolean status, ArrayList<Temp_Place_DTO> place_dtos);
     }
 }
