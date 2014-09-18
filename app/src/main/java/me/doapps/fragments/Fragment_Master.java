@@ -29,7 +29,7 @@ public class Fragment_Master extends Fragment {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if(ParseUser.getCurrentUser() != null && ParseFacebookUtils.getSession() != null){
-                    Toast.makeText(getActivity(), "Usuario Registrado", Toast.LENGTH_SHORT).show();
+                    getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,Fragment_Login.newInstance(),"fragment_login").addToBackStack("fragment_login").commit();
                 }else{
                     getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,Fragment_Login.newInstance()).addToBackStack(null).commit();
                 }

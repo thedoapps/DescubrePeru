@@ -278,7 +278,7 @@ public class Fragment_Register_Place extends Fragment_Master implements View.OnC
         if (requestCode == REQUEST_TAKE_PHOTO && resultCode == Activity.RESULT_OK) {
             addPhotoToGallery();
             DescubrePeru activity = (DescubrePeru)getActivity();
-            Picasso.with(activity).load("file://" + Uri.parse(activity.getCurrentPhotoPath())).fit().into(imgLocal);
+            Picasso.with(activity).load("file://" + Uri.parse(activity.getCurrentPhotoPath())).into(imgLocal);
             addImage.setVisibility(View.GONE);
             imgLocal.setVisibility(View.VISIBLE);
         } else {
