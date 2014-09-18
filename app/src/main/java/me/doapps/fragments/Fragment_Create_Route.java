@@ -87,6 +87,7 @@ public class Fragment_Create_Route extends Fragment {
             }
         });*/
 
+
         btn_add_place = (Button)getView().findViewById(R.id.btn_add_place);
         btn_create_route = (Button)getView().findViewById(R.id.btn_create_route);
 
