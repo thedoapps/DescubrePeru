@@ -18,14 +18,14 @@ import me.doapps.descubreperu.R;
 /**
  * Created by Gantz on 17/09/14.
  */
-public class Fragment_Tutorial extends Fragment {
+public class Fragment_Region extends Fragment {
 
     protected Adapter_Fragment mAdapter;
     protected ViewPager mPager;
     protected PageIndicator mIndicator;
 
-    public static Fragment_Tutorial newInstance() {
-        return new Fragment_Tutorial();
+    public static Fragment_Region newInstance() {
+        return new Fragment_Region();
     }
 
     @Override
@@ -34,39 +34,25 @@ public class Fragment_Tutorial extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_tutorial, container, false);
+    public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_region,container,false);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        mAdapter = new Adapter_Fragment(getActivity().getSupportFragmentManager());
+        mAdapter = new Adapter_Fragment(getChildFragmentManager());
         mPager = (ViewPager) getView().findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);
         mIndicator = (CirclePageIndicator) getView().findViewById(R.id.indicator);
         mIndicator.setViewPager(mPager);
-
-        getView().findViewById(R.id.btn_crear_ruta).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container, Fragment_Region.newInstance()).addToBackStack(null).commit();
-            }
-        });
-
-        getView().findViewById(R.id.btn_entrar).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container, Fragment_Region.newInstance()).addToBackStack(null).commit();
-            }
-        });
     }
 
     class Adapter_Fragment extends FragmentPagerAdapter {
 
-        int[] id_mensajes = {R.string.tutorial_turismo,R.string.tutorial_gastronomia,R.string.tutorial_nocturno};
-         int[] id_images = {R.drawable.portada_ruta_gastronomica,R.drawable.portada_ruta_turistica,R.drawable.portada_ruta_nocturna};
+        int[] id_mensajes = {R.string.region_lima,R.string.region_ica,R.string.region_cusco};
+        int[] id_images = {R.drawable.portada_ruta_gastronomica,R.drawable.portada_ruta_turistica,R.drawable.portada_ruta_nocturna};
 
         public Adapter_Fragment(FragmentManager fm) {
             super(fm);

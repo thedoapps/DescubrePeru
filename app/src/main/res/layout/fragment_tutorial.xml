@@ -4,8 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
@@ -21,7 +20,7 @@
         android:layout_gravity="bottom"
         app:radius="5dp"
         android:padding="15dp"
-        android:layout_marginBottom="50dp" />
+        android:layout_marginBottom="10dp" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -40,7 +39,7 @@
             android:textColor="@color/color_blanco"
             android:textStyle="bold"
             android:layout_marginRight="5dp"
-            android:id="@+id/button"
+            android:id="@+id/btn_crear_ruta"
             android:layout_weight="1" />
 
         <Button
@@ -50,7 +49,7 @@
             android:textColor="@color/color_blanco"
             android:textStyle="bold"
             android:text="@string/tutorial_entrar"
-            android:id="@+id/button2"
+            android:id="@+id/btn_entrar"
             android:layout_weight="1" />
     </LinearLayout>
 </FrameLayout>

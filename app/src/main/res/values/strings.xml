@@ -31,6 +31,10 @@
     <string name="tutorial_gastronomia">Llenar aqui angel</string>
     <string name="tutorial_nocturno">Llenar aqui angel</string>
 
+    <string name="region_lima">Lima</string>
+    <string name="region_ica">Ica</string>
+    <string name="region_cusco">Cusco</string>
+
     <string name="app_id">BKNI1bsBMI0jWhzCitMgsW9EZEaUC8n9N8K4lTUt</string>
     <string name="client_key">MJYQch3xqxxOZqrioO93Jgr2wAtQZUDsXEBr30Fb</string>
     <string name="google_maps_key">AIzaSyD4sKf-fUsUHXI2N8bxHHShbIOwlzC_jYM</string>
