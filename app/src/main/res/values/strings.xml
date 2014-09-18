@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">DescubrePeru</string>
+    <string name="app_name">Descubre Peru</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
@@ -16,12 +16,15 @@
     <!-- Detail Place -->
     <string name="name_place">Nombre del lugar</string>
     <string name="description_place">Descripcion del lugar</string>
+    <string name="comment_place">Ingrese comentario</string>
     <string name="show_comments">Ver Comentarios</string>
     <!-- Item route List-->
     <string name="route_name">Ruta de Cristian</string>
     <string name="route_likes">8 Likes</string>
     <!-- Fragment Region -->
     <string name="route_create">Crear Ruta</string>
+    <!-- Register Place -->
+
 
     <string name="app_id">BKNI1bsBMI0jWhzCitMgsW9EZEaUC8n9N8K4lTUt</string>
     <string name="client_key">MJYQch3xqxxOZqrioO93Jgr2wAtQZUDsXEBr30Fb</string>

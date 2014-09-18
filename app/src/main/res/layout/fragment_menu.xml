@@ -59,8 +59,7 @@
             android:layout_gravity="center"
             android:id="@+id/txt_option_rutas_turisticas"
             android:gravity="left"
-            android:textColor="@color/white"
-            />
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <LinearLayout
@@ -69,8 +68,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/option_rutas_gastronomicas"
         android:padding="10dp"
-        android:layout_marginTop="10dp"
-        >
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -89,8 +87,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:gravity="left"
-            android:textColor="@color/white"
-            />
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <LinearLayout
@@ -98,8 +95,7 @@
         android:padding="10dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/option_rutas_nocturnas"
-        >
+        android:id="@+id/option_rutas_nocturnas">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -118,7 +114,6 @@
             android:gravity="left"
             android:id="@+id/txt_option_rutas_nocturnas"
             android:textColor="@color/white"
-            android:layout_marginLeft="10dp"
-            />
+            android:layout_marginLeft="10dp" />
     </LinearLayout>
 </LinearLayout>

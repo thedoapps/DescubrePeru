@@ -3,11 +3,13 @@ package me.doapps.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import me.doapps.descubreperu.DescubrePeru;
 import me.doapps.descubreperu.R;
 import me.doapps.utils.Util_Fonts;
 
@@ -40,9 +42,25 @@ public class Fragment_Menu extends Fragment {
         TextView menu_nocturnas = (TextView)getView().findViewById(R.id.txt_option_rutas_nocturnas);
         TextView nombre_usuario = (TextView)getView().findViewById(R.id.menu_nombre_usuario);
 
-        nombre_usuario.setTypeface(Util_Fonts.setNexaBold(getActivity()));
-        menu_turistica.setTypeface(Util_Fonts.setNexaBold(getActivity()));
-        menu_gastronomicas.setTypeface(Util_Fonts.setNexaBold(getActivity()));
-        menu_nocturnas.setTypeface(Util_Fonts.setNexaBold(getActivity()));
+        nombre_usuario.setTypeface(Util_Fonts.setNexaLight(getActivity()));
+        menu_turistica.setTypeface(Util_Fonts.setNexaLight(getActivity()));
+        menu_gastronomicas.setTypeface(Util_Fonts.setNexaLight(getActivity()));
+        menu_nocturnas.setTypeface(Util_Fonts.setNexaLight(getActivity()));
+
+        getView().findViewById(R.id.txt_option_rutas_turisticas).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager manager = ((DescubrePeru)getActivity()).getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.container, Fragment_Route_Map.newInstance(), "fragment_route_map").commit();
+            }
+        });
+
+        getView().findViewById(R.id.txt_option_rutas_nocturnas).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager manager = ((DescubrePeru)getActivity()).getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.container, Fragment_Detail_Place.newInstance(), "fragment_detail_place").commit();
+            }
+        });
     }
 }
