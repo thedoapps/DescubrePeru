@@ -63,16 +63,6 @@ public class DescubrePeru extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if(sm_menu.isMenuShowing()){
-                sm_menu.toggle(true);
-                return false;
-            }
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-
     private void initActionBar(){
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
