@@ -21,6 +21,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import me.doapps.descubreperu.DescubrePeru;
 import me.doapps.descubreperu.R;
 import me.doapps.utils.Util_GPS;
@@ -28,11 +31,12 @@ import me.doapps.utils.Util_GPS;
 /**
  * Created by jnolascob on 17/09/2014.
  */
-public class Fragment_Route_Map extends Fragment {
+public class Fragment_Route_Map extends Fragment_Master {
     private GoogleMap map;
     private LatLng coordinateMap;
+    private String strCoordenadas = "-12.056313,-77.037348;-12.056471,-77.036629;-12.057190,-77.036870";
 
-    public static final Fragment_Route_Map newInstance(){
+    public static final Fragment_Route_Map newInstance() {
         return new Fragment_Route_Map();
     }
 
@@ -50,62 +54,47 @@ public class Fragment_Route_Map extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        setUpMapIfNeeded();
+        showMarks(strCoordenadas);
     }
 
-    /*Google Maps*/
-    private void setUpMapIfNeeded() {
-        if (map == null) {
-            map = ((SupportMapFragment) ((DescubrePeru)getActivity()).getSupportFragmentManager().findFragmentById(R.id.route_map)).getMap();
-            if (map != null) {
-                setUpMap();
-            }
+    private List<LatLng> getCoordenadasList(String strCoordenadas) {
+        // TODO Auto-generated method stub
+
+        String[] cc = strCoordenadas.split(";");
+        List<String> MIstrCoordenadas = new ArrayList<String>();
+
+        for (int i = 0; i < cc.length; i++) {
+            MIstrCoordenadas.add(cc[i]);
         }
-    }
 
-
-    private void setUpMap() {
-        Util_GPS util_gps = new Util_GPS(getActivity());
-
-        if(util_gps.canGetLocation()){
-            //mMap.setMyLocationEnabled(true);
-            map.getUiSettings().setZoomControlsEnabled(false);
-
-            Marker marker = map.addMarker(new MarkerOptions()
-                    .position(new LatLng(util_gps.getLatitude(), util_gps.getLongitude()))
-                            //.title("NOMADAPP")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-
-            CameraPosition camPos = new CameraPosition.Builder()
-                    .target(new LatLng(util_gps.getLatitude(),util_gps.getLongitude()))
-                    .zoom(16)
-                    .build();
-            CameraUpdate camUpd3 = CameraUpdateFactory.newCameraPosition(camPos);
-            map.animateCamera(camUpd3);
-            marker.showInfoWindow();
-
-        }else{
-            showSettingsAlert();
+        List<LatLng> coordenadas = new ArrayList<LatLng>();
+        for (int i = 0; i < MIstrCoordenadas.size(); i++) {
+            String compCoordenadas[] = MIstrCoordenadas.get(i).split(",");
+            coordenadas.add(new LatLng(Double.parseDouble(compCoordenadas[0]),
+                    Double.parseDouble(compCoordenadas[1])));
         }
+
+        return coordenadas;
     }
 
-    public void showSettingsAlert(){
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
-        alertDialog.setTitle("Aviso");
-        alertDialog.setMessage("Nomadapp necesita que actives tu GPS");
-        alertDialog.setPositiveButton("Activar", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog,int which) {
-                startActivityForResult(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS), 1);
-            }
-        });
-        alertDialog.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-        alertDialog.show();
-    }
+    private void showMarks(String strCoordenadas) {
+        LatLng cusco = new LatLng(-13.530614828358695, -71.84523969960935);
+        List<LatLng> coordenadas = getCoordenadasList(strCoordenadas);
 
+        map = ((SupportMapFragment) ((DescubrePeru) getActivity()).getSupportFragmentManager().findFragmentById(R.id.route_map)).getMap();
+
+        for (int i = 0; i < coordenadas.size(); i++) {
+            map.addMarker(
+                    new MarkerOptions().position(coordenadas.get(i))
+                            .title("Starbucks").snippet("food, coffee").draggable(true)
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.icono_ruta_gastronomica))
+            )
+                    .showInfoWindow();
+        }
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                coordenadas.get(coordenadas.size() - 1), 16));
+        map.getUiSettings().setZoomControlsEnabled(false);
+    }
 
 
 }

@@ -24,7 +24,7 @@ import me.doapps.views.View_Route;
 /**
  * Created by jnolascob on 17/09/2014.
  */
-public class Fragment_Route_List extends Fragment {
+public class Fragment_Route_List extends Fragment_Master {
     private ArrayList<Temp_Place_DTO> place_dtos = new ArrayList<Temp_Place_DTO>();
     private LinearLayout frame_places;
 
@@ -48,7 +48,7 @@ public class Fragment_Route_List extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         frame_places = (LinearLayout)getView().findViewById(R.id.frame_places);
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4; i++) {
             View_Place view_place = new View_Place(getActivity(),new Temp_Place_DTO());
             frame_places.addView(view_place);
         }
