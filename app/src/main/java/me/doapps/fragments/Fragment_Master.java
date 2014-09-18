@@ -2,6 +2,7 @@ package me.doapps.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.MenuItem;
 
 import me.doapps.descubreperu.DescubrePeru;
 import me.doapps.descubreperu.R;
@@ -14,7 +15,6 @@ public class Fragment_Master extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
         ((DescubrePeru) getActivity()).getSupportActionBar().setIcon(R.drawable.ic_launcher);
         ((DescubrePeru) getActivity()).getSupportActionBar().setDisplayShowCustomEnabled(true);
         ((DescubrePeru) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -22,5 +22,9 @@ public class Fragment_Master extends Fragment {
 
     public void showMenu(boolean visible) {
         ((DescubrePeru) getActivity()).item_add_route.setVisible(visible);
+    }
+
+    public MenuItem getMenuInstance(){
+        return  ((DescubrePeru) getActivity()).item_add_route;
     }
 }

@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,7 @@ public class Fragment_Principal extends Fragment_Master {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ((DescubrePeru) getActivity()).item_add_route.setVisible(true);
+        showMenu(true);
     }
 
     @Override
@@ -67,6 +68,17 @@ public class Fragment_Principal extends Fragment_Master {
             View_Route view_route = new View_Route(getActivity(),new Route_DTO());
             frame_routes.addView(view_route);
         }
+
+        /**
+         * Event Item
+         */
+        getMenuInstance().setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,Fragment_Login.newInstance()).addToBackStack(null).commit();
+                return false;
+            }
+        });
     }
 
     class Adapter_Fragment extends FragmentPagerAdapter {
